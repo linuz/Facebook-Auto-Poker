@@ -37,8 +37,7 @@ while True:
 					result = True
 					tempPokeNum += 1
 					break
-			if result: continue
-			else:
+			if not result:
 				browser.follow_link(text_regex="Poke back",nr=tempPokeNum)
 				tempPokeCount += 1
 				totalPokes += 1
