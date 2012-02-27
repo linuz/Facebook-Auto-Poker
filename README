@@ -1,0 +1,12 @@
+Requires:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Python 2.7 or higher
+Python-Mechanize <http://wwwsearch.sourceforge.net/mechanize/>
+
+Input your Facebook email and password into the source where it says:
+FACEBOOK_USERNAME = ""
+FACEBOOK_PASSWORD = ""
+
+You should create a file in the current directory called "blockPokes.txt". In this file, you can add FacebookIDs
+of people you do not want to be poked, delimited by line. (One ID per line)
+NOTE: Not their Facebook name!
