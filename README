@@ -10,3 +10,4 @@ FACEBOOK_PASSWORD = ""
 You should create a file in the current directory called "blockPokes.txt". In this file, you can add FacebookIDs
 of people you do not want to be poked, delimited by line. (One ID per line)
 NOTE: Not their Facebook name!
+test
