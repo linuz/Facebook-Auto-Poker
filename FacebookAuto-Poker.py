@@ -12,6 +12,7 @@ MAX_DELAY = 60
 delay = MAX_DELAY
 totalPokes = 0
 browser = mechanize.Browser()
+browser.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.61')]
 browser.set_handle_robots(False)
 browser.open("http://m.facebook.com/pokes")
 browser._factory.is_html = True
@@ -24,24 +25,15 @@ while True:
 	try:
 		tempPokeCount = 0
 		tempPokeNum = 0
-		browser.open("http://m.facebook.com/pokes")
 		browser._factory.is_html = True
 		for l in browser.links(text_regex="Poke back"):
 			result = False
 			browser._factory.is_html = True
-			if os.path.exists("blockPokes.txt"): file = open("blockPokes.txt")
-			else: file = " "
-			for line in file:
-				line = line.replace("\n","")
-				if (l.url.find(line) > -1):
-					result = True
-					tempPokeNum += 1
-					break
 			if not result:
 				browser.follow_link(text_regex="Poke back",nr=tempPokeNum)
 				tempPokeCount += 1
 				totalPokes += 1
-				print "Total Pokes: " + str(totalPokes) + "\n"
+				print "Poked! Total Pokes: " + str(totalPokes) + "\n"
 		if (tempPokeCount != 0 and delay > 1): delay /= 2
 		if (tempPokeCount == 0 and delay < MAX_DELAY): delay *= 2
 	except:
