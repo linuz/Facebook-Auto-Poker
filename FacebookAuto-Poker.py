@@ -24,13 +24,13 @@ browser._factory.is_html = True
 while True:
 	try:
 		tempPokeCount = 0
-		tempPokeNum = 0
+		browser.open("http://m.facebook.com/pokes")
 		browser._factory.is_html = True
 		for l in browser.links(text_regex="Poke back"):
-			result = False
+			result = True
 			browser._factory.is_html = True
-			if not result:
-				browser.follow_link(text_regex="Poke back",nr=tempPokeNum)
+			if result:
+				browser.follow_link(text_regex="Poke back",nr=0)
 				tempPokeCount += 1
 				totalPokes += 1
 				print "Poked! Total Pokes: " + str(totalPokes) + "\n"
