@@ -6,3 +6,4 @@ Python-Mechanize <http://wwwsearch.sourceforge.net/mechanize/>
 Input your Facebook email and password into the source where it says:
 FACEBOOK_USERNAME = ""
 FACEBOOK_PASSWORD = ""
+
